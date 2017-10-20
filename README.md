@@ -2,10 +2,13 @@
 <div  align="center">    
 
 <img src="http://47.92.112.211/wp-content/uploads/2017/10/vim-profile-screen-shot.png" width = 100% height = 100% alt="Preview" />
-
+Preview
 </div>
+* * *
 
-Backup your ~/.vimrc
+Follow the steps below
+
+1. Backup your ~/.vimrc
 ```
 cp ~/.vimrc ~/.vimrcbackup
 ```
@@ -13,16 +16,16 @@ cp ~/.vimrc ~/.vimrcbackup
 rm ~/.vimrc
 ```
 
-clone this profile to you ~/.vim folder.
+2. Clone this profile to you ~/.vim folder.
 ```
 cd ~/ ; git clone https://github.com/iyuangang/.vim.git
 ```
 
-open vim
+3, Open vim
 ```
 vim
 ```
-Input
+4, Input
 ```
 :PlugInstall
 ```
