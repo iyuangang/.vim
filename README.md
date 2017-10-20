@@ -1,4 +1,10 @@
 # .vim My vim dot file
+<div  align="center">    
+
+<img src="http://47.92.112.211/wp-content/uploads/2017/10/vim-profile-screen-shot.png" width = 100% height = 100% alt="Preview" />
+
+</div>
+
 Backup your ~/.vimrc
 ```
 cp ~/.vimrc ~/.vimrcbackup
