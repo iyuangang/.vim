@@ -2,7 +2,7 @@
 " - For Neovim: ~/.local/share/nvim/plugged
 " - Avoid using standard Vim directory names like 'plugin'
 set encoding=utf-8
-set term=screen
+set term=screen-256color
 set number
 set relativenumber
 set showcmd
