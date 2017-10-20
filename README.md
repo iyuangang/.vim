@@ -6,11 +6,13 @@ cp ~/.vimrc ~/.vimrcbackup
 ```
 rm ~/.vimrc
 ```
-cd ~/
+
 clone this profile to you ~/.vim folder.
 ```
+cd ~/
 git clone https://github.com/iyuangang/.vim.git
 ```
+
 open vim
 ```
 vim
