@@ -1,13 +1,10 @@
-"是否兼容VI，compatible为兼容，nocompatible为不完全兼容
-"如果设置为compatible，则tab将不会变成空格
-set nocompatible
-syntax enable
-set background=dark
+set nocompatible " incompatible vi
+syntax enable " syntax highlighting on
 set encoding=utf-8
 set term=screen-256color
 set ruler
 set number
-set relativenumber 
+set relativenumber
 set backspace=indent,eol,start
 set cursorline "highlight line
 set showcmd
@@ -18,27 +15,30 @@ set smartindent
 set showmatch
 set incsearch "incremental search, search as you type
 
-
-colorscheme solarized
+" VIM colorschemes----------------------------
+set background=dark
+colorscheme solarized 
 
 " With a map leader it's possible to do extra key combinations
 let mapleader = " "
 let g:mapleader = " "
+
 "strip all trailing whitespace in the current file
 nnoremap <leader>w :%s/\s\+$//<cr>:let @/=''<CR>
 
+" PLUGIN CONFIG =============================
+" !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 call plug#begin('~/.vim/plugged')
 
 " Make sure you use single quotes
 
 " Shorthand notation; fetches https://github.com/junegunn/vim-easy-align
 
+
 " Airline--------------------------------
 " linebar theme
-
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-
 let g:airline_theme='solarized'
 let g:airline_powerline_fonts=1
 
@@ -86,6 +86,7 @@ let g:syntastic_warning_symbol = ''
 let g:syntastic_style_error_symbol = ''
 let g:syntastic_style_warning_symbol = ''
 
+Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 
 " Tagbar -----------------------------
@@ -95,7 +96,7 @@ map <F4> :TagbarToggle<CR>
 " autofocus on tagbar open
 let g:tagbar_autofocus = 1
 
-" CtrlP config --------------------------- 
+" CtrlP config ---------------------------
 Plug 'kien/ctrlp.vim'
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
