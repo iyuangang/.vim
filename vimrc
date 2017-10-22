@@ -1,17 +1,29 @@
-" Specify a directory for plugins
-" - For Neovim: ~/.local/share/nvim/plugged
-" - Avoid using standard Vim directory names like 'plugin'
+"是否兼容VI，compatible为兼容，nocompatible为不完全兼容
+"如果设置为compatible，则tab将不会变成空格
+set nocompatible
 syntax enable
 set background=dark
 set encoding=utf-8
 set term=screen-256color
+set ruler
 set number
-set relativenumber
+set relativenumber "
+set backspace=indent,eol,start
+set cursorline "highlight line
 set showcmd
 set mousehide
+set tabstop=4
+set autoindent
+set smartindent
+set showmatch
+set incsearch "incremental search, search as you type
 
-colorscheme solarized 
 
+colorscheme solarized
+
+" With a map leader it's possible to do extra key combinations
+let mapleader = " "
+let g:mapleader = " "
 "strip all trailing whitespace in the current file
 nnoremap <leader>w :%s/\s\+$//<cr>:let @/=''<CR>
 
