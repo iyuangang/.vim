@@ -8,7 +8,10 @@ set relativenumber
 set showcmd
 set mousehide
 
-colorscheme SolarizedDark 
+colorscheme SolarizedDark
+
+"strip all trailing whitespace in the current file
+nnoremap <leader>w :%s/\s\+$//<cr>:let @/=''<CR>
 
 call plug#begin('~/.vim/plugged')
 
