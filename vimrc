@@ -1,6 +1,8 @@
 " Specify a directory for plugins
 " - For Neovim: ~/.local/share/nvim/plugged
 " - Avoid using standard Vim directory names like 'plugin'
+syntax enable
+set background=dark
 set encoding=utf-8
 set term=screen-256color
 set number
@@ -8,7 +10,7 @@ set relativenumber
 set showcmd
 set mousehide
 
-colorscheme SolarizedDark
+colorscheme solarized 
 
 "strip all trailing whitespace in the current file
 nnoremap <leader>w :%s/\s\+$//<cr>:let @/=''<CR>
@@ -58,7 +60,7 @@ call plug#end()
 
 " Airline--------------------------------
 " linebar theme
-let g:airline_theme='luna'
+let g:airline_theme='solarized'
 let g:airline_powerline_fonts=1
 
 " Syntastic ------------------------------
