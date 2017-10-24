@@ -19,7 +19,7 @@ You can also manually operate it.
 
 1. Backup your ~/.vimrc
 ```
-cp ~/.vimrc ~/.vimrcbackup ; cp -r ~/.vim ~/.vimbak ; rm -rf ~/.vimrc ~/.vim
+cp ~/.vimrc ~/.vimrcbak ; cp -r ~/.vim ~/.vimbak ; rm -rf ~/.vimrc ~/.vim
 ```
 
 
