@@ -28,6 +28,10 @@ nnoremap <leader>w :%s/\s\+$//<cr>:let @/=''<CR>
 
 " PLUGIN CONFIG =============================
 " !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+if empty(glob('~/.vim/plugged/'))
+  autocmd VimEnter * PlugUpdate | source $MYVIMRC
+endif
+
 call plug#begin('~/.vim/plugged')
 
 " Make sure you use single quotes
