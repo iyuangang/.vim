@@ -4,7 +4,7 @@ This profile can config vim ready in 5s.
 Fast，simple and credible.
 <div  align="center">    
 
-<img src="http://47.92.112.211/wp-content/uploads/2017/10/fscvim-1024x660.png" width = 100% height = 100% alt="Preview" />
+<img src="http://47.92.112.211/wp-content/uploads/2017/10/fscvim.png" width = 100% height = 100% alt="Preview" />
 Preview
 </div>
 
