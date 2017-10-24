@@ -39,5 +39,5 @@ Delete plugin 1, delete plugin in vimrc. 2, `:PlugClean`
 
 Remove this profile 
 ```
-rm -rf ~/.vim ; cp ~/.vimrcbackup ~/.vimrc ; cp -r ~/.vimbak ~/.vim
+rm -rf ~/.vim ; cp ~/.vimrcbak ~/.vimrc ; cp -r ~/.vimbak ~/.vim
 ```
