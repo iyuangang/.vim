@@ -1,6 +1,6 @@
 # .vim FSC dot file
 My vim dot file. `~/.vimrc` is removed and us `~/.vim/vimrc`. In this way version control can be easier.
-This profile can config vim ready in 30s.
+This profile can config vim ready in 5s.
 Fast，simple and credible.
 <div  align="center">    
 

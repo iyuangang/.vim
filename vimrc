@@ -14,6 +14,7 @@ set autoindent
 set smartindent
 set showmatch
 set incsearch "incremental search, search as you type
+set nowrap
 
 " VIM colorschemes----------------------------
 set background=dark
