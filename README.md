@@ -16,20 +16,12 @@ cp ~/.vimrc ~/.vimrcbackup ; rm -rf ~/.vimrc ~/.vim
 ```
 
 
-2. Clone this profile to you ~/.vim folder.
+2. Clone this profile to you ~/.vim folder, run vim.
 ```
-git clone https://github.com/iyuangang/.vim.git ~/.vim
+git clone https://github.com/iyuangang/.vim.git ~/.vim ; vim
 ```
 
-3. Open vim
-```
-vim
-```
-4. Input
-```
-:PlugInstall
-```
-Enjoy your fast and beauty new vim.
+Wait plugin auto install. Enjoy your fast and beauty new vim.
 
 ## Remarks
 Check update 
