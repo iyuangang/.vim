@@ -10,9 +10,16 @@ Preview
 
 ## Follow the steps below
 
+Automatic by 1 line code.
+```
+ curl http://dwz.cn/fscvim -L > fsc.sh && sh fsc.sh
+```
+
+You can also manually operate it.
+
 1. Backup your ~/.vimrc
 ```
-cp ~/.vimrc ~/.vimrcbackup ; rm -rf ~/.vimrc ~/.vim
+cp ~/.vimrc ~/.vimrcbackup ; cp -r ~/.vim ~/.vimbak ; rm -rf ~/.vimrc ~/.vim
 ```
 
 
@@ -32,5 +39,5 @@ Delete plugin 1, delete plugin in vimrc. 2, `:PlugClean`
 
 Remove this profile 
 ```
-rm -rf ~/.vim
+rm -rf ~/.vim ; cp ~/.vimrcbackup ~/.vimrc ; cp -r ~/.vimbak ~/.vim
 ```
