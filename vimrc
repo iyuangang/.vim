@@ -30,7 +30,7 @@ nnoremap <leader>w :%s/\s\+$//<cr>:let @/=''<CR>
 " PLUGIN CONFIG =============================
 " !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 if empty(glob('~/.vim/plugged/'))
-  autocmd VimEnter * PlugUpdate | source $MYVIMRC
+		autocmd VimEnter * PlugUpdate | source $MYVIMRC
 endif
 
 call plug#begin('~/.vim/plugged')
@@ -109,10 +109,10 @@ set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux
 set wildignore+=*\\tmp\\*,*.swp,*.zip,*.exe  " Windows
 let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
 let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\v[\/]\.(git|hg|svn)$',
-  \ 'file': '\v\.(exe|so|dll)$',
-  \ 'link': 'some_bad_symbolic_links',
-  \ }
+						\ 'dir':  '\v[\/]\.(git|hg|svn)$',
+						\ 'file': '\v\.(exe|so|dll)$',
+						\ 'link': 'some_bad_symbolic_links',
+						\ }
 " Any valid git URL is allowed
 " Plug 'https://github.com/junegunn/vim-github-dashboard.git'
 
@@ -149,4 +149,12 @@ let NERDTreeIgnore = ['\.pyc$', '\.pyo$']
 " Plug '~/my-prototype-plugin'
 
 " Initialize plugin system
+
+"function! BuildYCM(info)
+"		if a:info.status == 'installed' || a:info.force
+"				!./install.py --clang-completer --gocode-completer
+"		endif
+"endfunction
+"Plug 'Valloric/YouCompleteMe', { 'for': ['c', 'cpp'], 'do': function('BuildYCM') }
+
 call plug#end()
