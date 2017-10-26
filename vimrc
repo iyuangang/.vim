@@ -10,15 +10,18 @@ set cursorline "highlight line
 set showcmd
 set mousehide
 set tabstop=4
+set scrolloff=4
 set autoindent
 set smartindent
 set showmatch
+set hlsearch
 set incsearch "incremental search, search as you type
+set ic
 set nowrap
 
 " VIM colorschemes----------------------------
 set background=dark
-colorscheme solarized 
+colorscheme solarized
 
 " With a map leader it's possible to do extra key combinations
 let mapleader = " "
@@ -67,29 +70,12 @@ highlight SignifySignChange cterm=bold ctermbg=237 ctermfg=227
 
 Plug 'easymotion/vim-easymotion'
 
-" Syntastic ------------------------------
-Plug 'vim-syntastic/syntastic'
-" show list of errors and warnings on the current file
-nmap <leader>e :Errors<CR>
-" turn to next or previous errors, after open errors list
-nmap <leader>n :lnext<CR>
-nmap <leader>p :lprevious<CR>
-" check also when just opened the file
-let g:syntastic_check_on_open = 1
-" syntastic checker for javascript.
-" eslint is the only tool support JSX.
-" If you don't need write JSX, you can use jshint.
-" And eslint is slow, but not a hindrance
-" let g:syntastic_javascript_checkers = ['jshint']
-let g:syntastic_javascript_checkers = ['eslint']
-" don't put icons on the sign column (it hides the vcs status icons of signify)
-let g:syntastic_enable_signs = 0
-" custom icons (enable them if you use a patched font, and enable the previous
-" setting)
-let g:syntastic_error_symbol = ''
-let g:syntastic_warning_symbol = ''
-let g:syntastic_style_error_symbol = ''
-let g:syntastic_style_warning_symbol = ''
+" ale   ------------------------------
+Plug 'w0rp/ale'
+let g:ale_fix_on_save = 1
+let g:ale_completion_enabled = 1
+let g:ale_sign_column_always = 1
+let g:airline#extensions#ale#enabled = 1
 
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
