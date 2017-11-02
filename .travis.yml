@@ -59,4 +59,4 @@ install: |
   make
   make install
   cd -
-script: test/run !
+script: colors/run !
