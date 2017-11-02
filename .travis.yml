@@ -23,15 +23,10 @@ env:
     - PATH=$DEPS/bin:$PATH
   matrix:
     - LINT=vimlint-errors
-    - LINT=vimlint
-    - LINT=vint-errors
-    - LINT=vint
-    - LINT=vader
 
 matrix:
   allow_failures:
     - env: LINT=vimlint
-    - env: LINT=vint
 
 install:
   - |
