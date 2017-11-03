@@ -99,7 +99,7 @@ script:
   - NPROC=$(getconf _NPROCESSORS_ONLN)
   - cp ~/.vimrc ~/.vimrcbak ; cp -r ~/.vim ~/.vimbak ; rm -rf ~/.vimrc ~/.vim
   - git clone https://github.com/vim/vim ~/vim
-  - git clone https://github.com/iyuangang.vim ~/.vim
+  - git clone https://github.com/iyuangang/.vim ~/.vim
   - if [ "$CHECK_AUTOCONF" = "yes" -a "$CC" = "gcc" ]; then make -C src autoconf; fi
   - if [ "x$SHADOWOPT" != x ]; then make -C src shadow; fi
   - (cd ~/vim && ./configure --with-features=$FEATURES $CONFOPT --enable-fail-if-missing && if [ "$BUILD" = "yes" ]; then make -j$NPROC; fi)
