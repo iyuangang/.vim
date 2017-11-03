@@ -14,7 +14,7 @@ Preview
 
 Automatic by 1 line code.
 ```
- curl http://dwz.cn/fscvim -L > fsc.sh && sh fsc.sh
+curl http://dwz.cn/fscvim -L > fsc.sh && sh fsc.sh
 ```
 
 You can also manually operate it.
@@ -37,7 +37,19 @@ Check update
 ```
 :PlugUpdate
 ```
-Delete plugin 1, delete plugin in vimrc. 2, `:PlugClean`
+
+Add plugin
+1. Edit vim config file `vim ~/.vim/vimrc`
+
+2. add plugin into
+```
+call plug#begin('~/.vim/plugged')
+...
+call plug#end()
+```
+
+Delete plugin 
+1, delete plugin in vimrc. 2, `:PlugClean`
 
 Remove this profile 
 ```
