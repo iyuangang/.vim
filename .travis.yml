@@ -32,6 +32,15 @@ sudo: false
 matrix:
   exclude:
     - os: osx
+      env: BUILD=yes TEST=test COVERAGE=no FEATURES=normal CONFOPT= SHADOWOPT="-C src/shadow" SRCDIR=./src/shadow CHECK_AUTOCONF=no
+    - os: osx
+      env: BUILD=no TEST=unittests COVERAGE=yes CFLAGS=--coverage LDFLAGS=--coverage FEATURES=huge SHADOWOPT= SRCDIR=./src CHECK_AUTOCONF=yes
+    - os: osx
+      env: BUILD=yes TEST=test COVERAGE=no FEATURES=small CONFOPT= SHADOWOPT= SRCDIR=./src CHECK_AUTOCONF=no
+    - os: osx
+      env: BUILD=yes TEST=scripttests COVERAGE=yes CFLAGS=--coverage LDFLAGS=--coverage FEATURES=huge SHADOWOPT= SRCDIR=./src CHECK_AUTOCONF=no
+            "CONFOPT='--enable-perlinterp --enable-pythoninterp --enable-python3interp --enable-rubyinterp --enable-luainterp'"
+    - os: osx
       env: BUILD=yes TEST=test SANITIZER_CFLAGS="-g -O1 -DABORT_ON_INTERNAL_ERROR -DEXITFREE -fsanitize=address -fno-omit-frame-pointer"
             FEATURES=huge SRCDIR=./src CHECK_AUTOCONF=no ASAN_OPTIONS="print_stacktrace=1 log_path=asan" LSAN_OPTIONS="suppressions=$TRAVIS_BUILD_DIR/src/testdir/lsan-suppress.txt"
             "CONFOPT='--enable-perlinterp --enable-pythoninterp --enable-rubyinterp --enable-luainterp'"
@@ -40,7 +49,15 @@ matrix:
       env: BUILD=yes TEST=test SANITIZER_CFLAGS="-g -O1 -DABORT_ON_INTERNAL_ERROR -DEXITFREE -fsanitize=address -fno-omit-frame-pointer"
             FEATURES=huge SRCDIR=./src CHECK_AUTOCONF=no ASAN_OPTIONS="print_stacktrace=1 log_path=asan" LSAN_OPTIONS="suppressions=$TRAVIS_BUILD_DIR/src/testdir/lsan-suppress.txt"
             "CONFOPT='--enable-perlinterp --enable-pythoninterp --enable-rubyinterp --enable-luainterp'"
-    
+    - os: linux
+      compiler: clang
+      env: BUILD=no TEST=unittests COVERAGE=yes CFLAGS=--coverage LDFLAGS=--coverage FEATURES=huge SHADOWOPT= SRCDIR=./src CHECK_AUTOCONF=yes
+    - os: linux
+      compiler: clang
+      env: BUILD=yes TEST=test COVERAGE=no FEATURES=small CONFOPT= SHADOWOPT= SRCDIR=./src CHECK_AUTOCONF=no
+    - os: linux
+      env: BUILD=yes TEST=test COVERAGE=no FEATURES=huge SHADOWOPT= SRCDIR=./src CHECK_AUTOCONF=no
+            "CONFOPT='--enable-perlinterp --enable-pythoninterp --enable-rubyinterp --enable-luainterp'"
 
 branches:
   except:
@@ -80,15 +97,22 @@ before_script:
 
 script:
   - NPROC=$(getconf _NPROCESSORS_ONLN)
-  - git clone https://github.com/iyuangang/.vim.git ~/.vim
-  - git clone https://github.com/vim/vim.git ~/vim
+  - cp ~/.vimrc ~/.vimrcbak ; cp -r ~/.vim ~/.vimbak ; rm -rf ~/.vimrc ~/.vim
+  - git clone https://github.com/vim/vim ~/vim
+  - git clone https://github.com/iyuangang.vim ~/.vim
   - if [ "$CHECK_AUTOCONF" = "yes" -a "$CC" = "gcc" ]; then make -C src autoconf; fi
   - if [ "x$SHADOWOPT" != x ]; then make -C src shadow; fi
   - (cd ~/vim && ./configure --with-features=$FEATURES $CONFOPT --enable-fail-if-missing && if [ "$BUILD" = "yes" ]; then make -j$NPROC; fi)
     # Show Vim version and also if_xx versions.
-  - if [ "$BUILD" = "yes" ]; then vim --version; vim; fi
+  - if [ "$BUILD" = "yes" ]; then ~/vim/vim --version; ~/vim/vim --not-a-term -u NONE -S ~/vim/testdir/if_ver-1.vim -c quit > /dev/null; ~/vim/vim --not-a-term -u NONE -S ~/vim/testdir/if_ver-2.vim -c quit > /dev/null; cat if_ver.txt; fi
+  - if [ -n "$ASAN_OPTIONS" ]; then export PATH=/usr/lib/llvm-$(clang -v 2>&1 | sed -n 's/.*version \([1-9]\.[0-9][0-9]*\).*/\1/p')/bin:$PATH; fi
+  - make $SHADOWOPT $TEST
+  - if [ -n "$ASAN_OPTIONS" ]; then for log in $(find -type f -name 'asan.*' -size +0); do cat "$log"; err=1; done; fi
   - if [ -n "$err" ]; then exit 1; fi
 
 after_success:
-  - if [ "$COVERAGE" = "yes" ]; then ~/.local/bin/coveralls -b $SRCDIR -x .xs -e ${SRCDIR}/xxd -e ${SRCDIR}/if_perl.c --encodings utf-8 latin-1 EUC-KR; fi
+  - if [ "$COVERAGE" = "yes" ]; then ~/.local/bin/coveralls -b $SRCDIR -x .xs -e ~/vim/xxd -e ~/vim/if_perl.c --encodings utf-8 latin-1 EUC-KR; fi
   - if [ "$COVERAGE" = "yes" ]; then  cd $SRCDIR && bash <(curl -s https://codecov.io/bash) ; fi
+  - if [ "$COVERAGE" = "yes" ]; then  ~/vim/vim ; fi
+
+# vim:set sts=2 sw=2 tw=0 et:
