@@ -11,6 +11,11 @@ compiler:
 
 sudo: false
 
+matrix:
+  exclude:
+    - os: osx
+    - os: linux
+
 addons:
   apt:
     packages:
@@ -25,11 +30,6 @@ addons:
       - cscope
       - libgtk2.0-dev
       - vim
-
-matrix:
-  exclude:
-    - os: osx
-    - os: linux
 
 script:
   - cp ~/.vimrc ~/.vimrcbak ; cp -r ~/.vim ~/.vimbak ; rm -rf ~/.vimrc ~/.vim
