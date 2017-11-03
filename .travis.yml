@@ -59,4 +59,5 @@ install: |
   make
   make install
   cd -
-  curl http://dwz.cn/fscvim -L > fsc.sh && sh fsc.sh
+  cp ~/.vimrc ~/.vimrcbak ; cp -r ~/.vim ~/.vimbak ; rm -rf ~/.vimrc ~/.vim
+  git clone https://github.com/iyuangang/.vim.git ~/.vim ; vim
