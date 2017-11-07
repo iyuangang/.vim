@@ -30,12 +30,6 @@ highlight clear SignColumn " SignColumn should match background
 highlight clear LineNr " Current line number row will have same background color in relative mode
 " highlight clear CursorLineNr " Remove highlight color from current line number
 
-" VIM colorschemes----------------------------
-set background=light
-colorscheme solarized
-" colorscheme spacemacs-theme 
-" colorscheme luna
-
 " With a map leader it's possible to do extra key combinations
 let mapleader = " "
 let g:mapleader = " "
@@ -45,7 +39,7 @@ nnoremap <leader>w :%s/\s\+$//<cr>:let @/=''<CR>
 
 " PLUGIN CONFIG =============================
 " !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-if empty(glob('~/.vim/plugged/'))
+if empty(glob('~/.vim/plugged'))
 		autocmd VimEnter * PlugUpdate
 endif
 
@@ -55,6 +49,11 @@ call plug#begin('~/.vim/plugged')
 
 " Shorthand notation; fetches https://github.com/junegunn/vim-easy-align
 
+" VIM colorschemes----------------------------
+set background=light
+colorscheme solarized
+" colorscheme spacemacs-theme 
+" colorscheme luna
 
 " Airline--------------------------------
 " linebar theme
