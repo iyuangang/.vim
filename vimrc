@@ -1,5 +1,4 @@
 set nocompatible " incompatible vi
-syntax enable " syntax highlighting on
 set encoding=utf-8
 set term=screen-256color
 set ruler
@@ -19,9 +18,12 @@ set incsearch "incremental search, search as you type
 set ic
 set nowrap
 
+syntax enable " syntax highlighting on
+
 " VIM colorschemes----------------------------
 set background=dark
 colorscheme solarized
+" colorscheme luna
 
 " With a map leader it's possible to do extra key combinations
 let mapleader = " "
@@ -48,6 +50,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 let g:airline_theme='solarized'
+" let g:airline_theme='luna'
 let g:airline_powerline_fonts=1
 
 Plug 'tpope/vim-git'
