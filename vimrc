@@ -1,24 +1,34 @@
 set nocompatible " incompatible vi
 set encoding=utf-8
-set term=screen-256color
-set ruler
-set number
-set relativenumber
-set backspace=indent,eol,start
-set cursorline "highlight line
-set showcmd
-set mousehide
-set tabstop=4
-set scrolloff=4
-set autoindent
-set smartindent
-set showmatch
-set hlsearch
+set term=screen-256color " Tmux color
+set ruler " Show the ruler
+set rulerformat=%30(%=\:b%n%y%m%r%w\ %l,%c%V\ %P%) " A ruler on steroids
+set showcmd " Show partial commands in status line and
+set number " Line number on
+set relativenumber " Line relative number
+set backspace=indent,eol,start " Backspace for dummies
+set cursorline " Highlight current line
+set mouse=a " Automatically detect file types
+set mousehide " Hide the mouse cursor while typing
+set expandtab " Tabs are spaces, not tabs
+set tabstop=4 " An indentation every four columns
+set softtabstop=4 " Let backspace delete indent
+set scrolloff=4 " Minimum lines to keep above and below cursor
+set scrolljump=5 " Lines to scroll when cursor leaves screen
+set autoindent " Indent at the same level of the previous line
+set smartindent " Indent smart
+set showmatch " Show matching brackets/parenthesis
 set incsearch "incremental search, search as you type
-set ic
-set nowrap
+set hlsearch " Highlight search terms
+set ignorecase " Case insensitive search
+set smartcase " Case sensitive when uc present
+set nowrap " Do not wrap long lines
 
 syntax enable " syntax highlighting on
+
+highlight clear SignColumn " SignColumn should match background
+highlight clear LineNr " Current line number row will have same background color in relative mode
+" highlight clear CursorLineNr " Remove highlight color from current line number
 
 " VIM colorschemes----------------------------
 set background=dark
