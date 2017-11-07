@@ -26,13 +26,14 @@ set nowrap " Do not wrap long lines
 
 syntax enable " syntax highlighting on
 
-highlight clear SignColumn " SignColumn should match background
-highlight clear LineNr " Current line number row will have same background color in relative mode
+" highlight clear SignColumn " SignColumn should match background
+" highlight clear LineNr " Current line number row will have same background color in relative mode
 " highlight clear CursorLineNr " Remove highlight color from current line number
 
 " VIM colorschemes----------------------------
-set background=dark
-colorscheme solarized
+set background=light
+" colorscheme solarized
+colorscheme spacemacs-theme 
 " colorscheme luna
 
 " With a map leader it's possible to do extra key combinations
