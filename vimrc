@@ -50,9 +50,9 @@ call plug#begin('~/.vim/plugged')
 " Shorthand notation; fetches https://github.com/junegunn/vim-easy-align
 
 " VIM colorschemes----------------------------
-set background=light
+" set background=light
+set background=dark
 colorscheme solarized
-" colorscheme spacemacs-theme 
 " colorscheme luna
 
 " Airline--------------------------------
