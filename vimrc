@@ -39,9 +39,9 @@ nnoremap <leader>w :%s/\s\+$//<cr>:let @/=''<CR>
 
 " PLUGIN CONFIG =============================
 " !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-if empty(glob('~/.vim/plugged'))
-		autocmd VimEnter * PlugUpdate
-endif
+" if empty(glob('~/.vim/plugged'))
+" 		autocmd VimEnter * PlugUpdate
+" endif
 
 call plug#begin('~/.vim/plugged')
 
