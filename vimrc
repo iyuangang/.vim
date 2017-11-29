@@ -5,8 +5,8 @@ language messages en_US.UTF-8
 set nocompatible " incompatible vi
 set term=xterm " Tmux color
 set t_Co=256
-set ruler " Show the ruler
-set rulerformat=%30(%=\:b%n%y%m%r%w\ %l,%c%V\ %P%) " A ruler on steroids
+" set ruler " Show the ruler Ps. if airline disable, enable this
+" set rulerformat=%30(%=\:b%n%y%m%r%w\ %l,%c%V\ %P%) " A ruler on steroids
 set showcmd " Show partial commands in status line and
 set number " Line number on
 set relativenumber " Line relative number
