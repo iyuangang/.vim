@@ -1,6 +1,7 @@
 set nocompatible " incompatible vi
 set encoding=utf-8
-set term=screen-256color " Tmux color
+set term=xterm " Tmux color
+set t_Co=256
 set ruler " Show the ruler
 set rulerformat=%30(%=\:b%n%y%m%r%w\ %l,%c%V\ %P%) " A ruler on steroids
 set showcmd " Show partial commands in status line and
@@ -37,23 +38,31 @@ let g:mapleader = " "
 "strip all trailing whitespace in the current file
 nnoremap <leader>w :%s/\s\+$//<cr>:let @/=''<CR>
 
-" PLUGIN CONFIG =============================
-" !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-" if empty(glob('~/.vim/plugged'))
-" 		autocmd VimEnter * PlugUpdate
-" endif
-
-call plug#begin('~/.vim/plugged')
-
-" Make sure you use single quotes
-
-" Shorthand notation; fetches https://github.com/junegunn/vim-easy-align
+" GVIM font----------------------------
+set guifont=DejaVu\ Sans\ Mono\ for\ Powerline:h12
+set guioptions-=T " hide tool bar
+set guioptions-=m " hide menu bar
+set guioptions-=r " hide right scroll bar
+set guioptions-=l " hide left scroll bar
+set guioptions-=R " hide right scroll bar when window is split vertically
+set guioptions-=L " hide left scroll bar when window is split vertically
 
 " VIM colorschemes----------------------------
 " set background=light
 set background=dark
 colorscheme solarized
 " colorscheme luna
+
+" PLUGIN CONFIG =============================
+" !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+" if empty(glob('~/.vim/plugged'))
+" 		autocmd VimEnter * PlugUpdate
+" endif
+call plug#begin('~/.vim/plugged')
+
+" Make sure you use single quotes
+
+" Shorthand notation; fetches https://github.com/junegunn/vim-easy-align
 
 " Airline--------------------------------
 " linebar theme
