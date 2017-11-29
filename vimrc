@@ -1,6 +1,6 @@
 set fileencodings=ucs-bom,utf-8,cp936,gb18030,big5,euc-jp,euc-kr,latin1
 set encoding=utf-8
-set termencoding=cp936
+" set termencoding=cp936
 language messages en_US.UTF-8
 set nocompatible " incompatible vi
 set term=xterm " Tmux color
@@ -56,11 +56,12 @@ set background=dark
 colorscheme solarized
 " colorscheme luna
 
-" PLUGIN CONFIG =============================
+PLUGIN CONFIG =============================
 " !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-" if empty(glob('~/.vim/plugged'))
-" 		autocmd VimEnter * PlugUpdate
-" endif
+if empty(glob('~/.vim/plugged'))
+		autocmd VimEnter * PlugUpdate
+endif
+
 call plug#begin('~/.vim/plugged')
 
 " Make sure you use single quotes
