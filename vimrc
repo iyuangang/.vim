@@ -56,7 +56,7 @@ set background=dark
 colorscheme solarized
 " colorscheme luna
 
-PLUGIN CONFIG =============================
+" PLUGIN CONFIG =============================
 " !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 if empty(glob('~/.vim/plugged'))
 		autocmd VimEnter * PlugUpdate
