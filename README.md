@@ -10,9 +10,9 @@ Fast，simple and credible.
 Preview
 </div>
 
-# Linux & MacOS
+## Linux & MacOS
 
-## Follow the steps below
+### Follow the steps below
 
 Automatic by 1 line code.
 ```
@@ -34,23 +34,25 @@ git clone https://github.com/iyuangang/.vim.git ~/.vim ; vim -c PlugInstall
 
 Wait plugin auto install. Enjoy your fast and beauty new vim.
 
-# Windows
+## Windows
 
-## Follow the steps below
+### Follow the steps below
 
 1. Download [install.cmd](https://raw.githubusercontent.com/iyuangang/linuxconf/master/install.cmd).
 2. Run the cmd file as Administrator.
 3. Open Gvim. Enjoy it.
 
 ## Remarks
-Check update 
+
+### Check update 
+
 ```
 :PlugUpdate
 ```
 
-Add plugin
-1. Edit vim config file `vim ~/.vim/vimrc`
+### Add plugin
 
+1. Edit vim config file `vim ~/.vim/vimrc`
 2. add plugin into
 ```
 call plug#begin('~/.vim/plugged')
@@ -58,10 +60,13 @@ call plug#begin('~/.vim/plugged')
 call plug#end()
 ```
 
-Delete plugin 
-1, delete plugin in vimrc. 2, `:PlugClean`
+### Delete plugin 
 
-Remove this profile 
+1. delete plugin config code in vimrc.
+2. `:PlugClean`
+
+### Remove this profile 
+
 ```
 rm -rf ~/.vim ; cp ~/.vimrcbak ~/.vimrc ; cp -r ~/.vimbak ~/.vim
 ```
