@@ -10,6 +10,8 @@ Fast，simple and credible.
 Preview
 </div>
 
+# Linux & MacOS
+
 ## Follow the steps below
 
 Automatic by 1 line code.
@@ -31,6 +33,14 @@ git clone https://github.com/iyuangang/.vim.git ~/.vim ; vim -c PlugInstall
 ```
 
 Wait plugin auto install. Enjoy your fast and beauty new vim.
+
+# Windows
+
+## Follow the steps below
+
+1. Download [install.cmd](https://raw.githubusercontent.com/iyuangang/linuxconf/master/install.cmd).
+2. Run the cmd file as Administrator.
+3. Open Gvim. Enjoy it.
 
 ## Remarks
 Check update 
