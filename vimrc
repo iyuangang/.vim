@@ -59,7 +59,7 @@ colorscheme solarized
 " PLUGIN CONFIG =============================
 " !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 if empty(glob('~/.vim/plugged'))
-		autocmd VimEnter * PlugUpdate
+        autocmd VimEnter * PlugUpdate
 endif
 
 call plug#begin('~/.vim/plugged')
@@ -119,10 +119,10 @@ let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux
 let g:ctrlp_custom_ignore = {
-						\ 'dir':  '\v[\/]\.(git|hg|svn)$',
-						\ 'file': '\v\.(exe|so|dll)$',
-						\ 'link': 'some_bad_symbolic_links',
-						\ }
+                        \ 'dir':  '\v[\/]\.(git|hg|svn)$',
+                        \ 'file': '\v\.(exe|so|dll)$',
+                        \ 'link': 'some_bad_symbolic_links',
+                        \ }
 " Any valid git URL is allowed
 " Plug 'https://github.com/junegunn/vim-github-dashboard.git'
 
@@ -166,5 +166,22 @@ let NERDTreeIgnore = ['\.pyc$', '\.pyo$']
 "		endif
 "endfunction
 "Plug 'Valloric/YouCompleteMe', { 'for': ['c', 'cpp'], 'do': function('BuildYCM') }
+
+Plug 'scrooloose/nerdcommenter'
+" <leader>cc // 注释
+" <leader>cm 只用一组符号注释
+" <leader>cA 在行尾添加注释
+" <leader>c$ /* 注释 */
+" <leader>cs /* 块注释 */
+" <leader>cy 注释并复制
+" <leader>c<space> 注释/取消注释
+" <leader>ca 切换　// 和 /* */
+" <leader>cu 取消注释
+let g:NERDSpaceDelims = 1
+let g:NERDDefaultAlign = 'left'
+let g:NERDCustomDelimiters = {
+                        \ 'javascript': { 'left': '//', 'leftAlt': '/**', 'rightAlt': '*/' },
+                        \ 'less': { 'left': '/**', 'right': '*/' }
+                        \ }
 
 call plug#end()
