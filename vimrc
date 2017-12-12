@@ -9,7 +9,9 @@ set t_Co=256
 " set rulerformat=%30(%=\:b%n%y%m%r%w\ %l,%c%V\ %P%) " A ruler on steroids
 set showcmd " Show partial commands in status line and
 set number " Line number on
-set relativenumber " Line relative number
+" set relativenumber " Line relative number
+  autocmd BufEnter,FocusGained,InsertLeave,WinEnter * if &nu | set rnu   | endif
+  autocmd BufLeave,FocusLost,InsertEnter,WinLeave   * if &nu | set nornu | endif
 set backspace=indent,eol,start " Backspace for dummies
 set cursorline " Highlight current line
 set mouse=a " Automatically detect file types
