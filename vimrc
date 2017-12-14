@@ -20,8 +20,8 @@ set mousehide " Hide the mouse cursor while typing
 set expandtab " Tabs are spaces, not tabs
 set tabstop=4 " An indentation every four columns
 set softtabstop=4 " Let backspace delete indent
-set scrolloff=4 " Minimum lines to keep above and below cursor
-set scrolljump=5 " Lines to scroll when cursor leaves screen
+set scrolloff=5 " Minimum lines to keep above and below cursor
+" set scrolljump=5 " Lines to scroll when cursor leaves screen
 set autoindent " Indent at the same level of the previous line
 set smartindent " Indent smart
 set showmatch " Show matching brackets/parenthesis
