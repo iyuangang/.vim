@@ -1,3 +1,6 @@
 plugged/
 *.swp
 .netrwhist
+.DS_Store
+*.pyc
+*._*
