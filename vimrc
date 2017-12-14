@@ -1,3 +1,4 @@
+" FSCVIM basic set -------------------
 set fileencodings=ucs-bom,utf-8,cp936,gb18030,big5,euc-jp,euc-kr,latin1
 set encoding=utf-8
 " set termencoding=cp936
@@ -10,8 +11,8 @@ set t_Co=256
 set showcmd " Show partial commands in status line and
 set number " Line number on
 " set relativenumber " Line relative number
-  autocmd BufEnter,FocusGained,InsertLeave,WinEnter * if &nu | set rnu   | endif
-  autocmd BufLeave,FocusLost,InsertEnter,WinLeave   * if &nu | set nornu | endif
+    autocmd BufEnter,FocusGained,InsertLeave,WinEnter * if &nu | set rnu   | endif
+    autocmd BufLeave,FocusLost,InsertEnter,WinLeave   * if &nu | set nornu | endif
 set backspace=indent,eol,start " Backspace for dummies
 set cursorline " Highlight current line
 set mouse=a " Automatically detect file types
@@ -56,7 +57,7 @@ colorscheme solarized
 
 highlight clear SignColumn " SignColumn should match background
 " highlight clear LineNr " Current line number row will have same background color in relative mode
-highlight clear CursorLineNr " Remove highlight color from current line number
+" highlight clear CursorLineNr " Remove highlight color from current line number
 
 " PLUGIN CONFIG =============================
 " !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
@@ -77,6 +78,7 @@ Plug 'vim-airline/vim-airline-themes'
 let g:airline_theme='solarized'
 " let g:airline_theme='luna'
 let g:airline_powerline_fonts=1
+let g:airline#extensions#tabline#enabled=1
 
 " Plug 'tpope/vim-git'
 
