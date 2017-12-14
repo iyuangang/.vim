@@ -29,7 +29,7 @@ cp ~/.vimrc ~/.vimrcbak ; cp -r ~/.vim ~/.vimbak ; rm -rf ~/.vimrc ~/.vim
 
 2. Clone this profile to you ~/.vim folder, run vim.
 ```
-git clone https://github.com/iyuangang/.vim.git ~/.vim ; vim -c PlugInstall
+git clone https://github.com/iyuangang/.vim.git ~/.vim ; vim
 ```
 
 Wait plugin auto install. Enjoy your fast and beauty new vim.
@@ -42,9 +42,9 @@ Wait plugin auto install. Enjoy your fast and beauty new vim.
 2. Run the cmd file as Administrator.
 3. Open Gvim. Enjoy it.
 
-## Remarks
+## Instructions
 
-### Check update 
+### Check update
 
 ```
 :PlugUpdate
@@ -60,12 +60,12 @@ call plug#begin('~/.vim/plugged')
 call plug#end()
 ```
 
-### Delete plugin 
+### Delete plugin
 
 1. delete plugin config code in vimrc.
 2. `:PlugClean`
 
-### Remove this profile 
+### Remove this profile
 
 ```
 rm -rf ~/.vim ; cp ~/.vimrcbak ~/.vimrc ; cp -r ~/.vimbak ~/.vim

@@ -78,7 +78,7 @@ let g:airline_theme='solarized'
 " let g:airline_theme='luna'
 let g:airline_powerline_fonts=1
 
-Plug 'tpope/vim-git'
+" Plug 'tpope/vim-git'
 
 " Signify ------------------------------
 Plug 'mhinz/vim-signify'
@@ -105,8 +105,10 @@ let g:ale_completion_enabled = 1
 let g:ale_sign_column_always = 1
 let g:airline#extensions#ale#enabled = 1
 
-Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
+Plug 'tpope/vim-repeat'
+
+Plug 'vim-scripts/Auto-Pairs'
 
 " Tagbar -----------------------------
 Plug 'majutsushi/tagbar'
