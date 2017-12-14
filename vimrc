@@ -30,12 +30,6 @@ set ignorecase " Case insensitive search
 set smartcase " Case sensitive when uc present
 set nowrap " Do not wrap long lines
 
-syntax enable " syntax highlighting on
-
-" highlight clear SignColumn " SignColumn should match background
-" highlight clear LineNr " Current line number row will have same background color in relative mode
-" highlight clear CursorLineNr " Remove highlight color from current line number
-
 " With a map leader it's possible to do extra key combinations
 let mapleader = " "
 let g:mapleader = " "
@@ -52,11 +46,17 @@ set guioptions-=l " hide left scroll bar
 set guioptions-=R " hide right scroll bar when window is split vertically
 set guioptions-=L " hide left scroll bar when window is split vertically
 
+syntax enable " syntax highlighting on
+
 " VIM colorschemes----------------------------
 " set background=light
 set background=dark
 colorscheme solarized
 " colorscheme luna
+
+highlight clear SignColumn " SignColumn should match background
+" highlight clear LineNr " Current line number row will have same background color in relative mode
+highlight clear CursorLineNr " Remove highlight color from current line number
 
 " PLUGIN CONFIG =============================
 " !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
@@ -92,9 +92,9 @@ nmap <leader>sp <plug>(signify-prev-hunk)
 highlight DiffAdd cterm=bold ctermbg=none ctermfg=119
 highlight DiffDelete cterm=bold ctermbg=none ctermfg=167
 highlight DiffChange cterm=bold ctermbg=none ctermfg=227
-highlight SignifySignAdd cterm=bold ctermbg=237 ctermfg=119
-highlight SignifySignDelete cterm=bold ctermbg=237 ctermfg=167
-highlight SignifySignChange cterm=bold ctermbg=237 ctermfg=227
+highlight SignifySignAdd cterm=bold ctermbg=none ctermfg=119
+highlight SignifySignDelete cterm=bold ctermbg=none ctermfg=167
+highlight SignifySignChange cterm=bold ctermbg=none ctermfg=227
 
 Plug 'easymotion/vim-easymotion'
 
