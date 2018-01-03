@@ -4,8 +4,14 @@ set encoding=utf-8
 " set termencoding=cp936
 language messages en_US.UTF-8
 set nocompatible " incompatible vi
-set term=xterm " Tmux color
-set t_Co=256
+" set term=xterm " Tmux color
+" set t_Co=256
+set termguicolors
+if (!exists('termguicolors'))
+        set term=xterm
+        set t_Co=256
+endif
+        
 " set ruler " Show the ruler Ps. if airline disable, enable this
 " set rulerformat=%30(%=\:b%n%y%m%r%w\ %l,%c%V\ %P%) " A ruler on steroids
 set showcmd " Show partial commands in status line and
@@ -52,7 +58,13 @@ syntax enable " syntax highlighting on
 " VIM colorschemes----------------------------
 " set background=light
 set background=dark
-colorscheme solarized
+
+if (has('termguicolors'))
+        colorscheme tc_solarized
+else
+        colorscheme solarized
+endif
+
 " colorscheme luna
 
 highlight clear SignColumn " SignColumn should match background
