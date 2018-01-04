@@ -54,11 +54,13 @@ set background=dark
 " Colorscheme
 if ($COLORTERM == 'truecolor') || (has('gui_running'))
         set termguicolors
+        colorscheme s
 else
         set term=xterm
         set t_Co=256
+        colorscheme solarized
 endif
-colorscheme solarized
+
 
 " colorscheme luna
 
