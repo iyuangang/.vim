@@ -5,6 +5,7 @@
 " License:  OSI approved MIT license (see end of this file)
 " Created:  In the middle of the night
 " Modified: 2011 May 05
+" Modified: 2018 Jan 04 Truecolor terminal support
 "
 " Usage "{{{
 "
@@ -240,7 +241,7 @@ let colors_name = "solarized"
 " leave the hex values out entirely in that case and include only cterm colors)
 " We also check to see if user has set solarized (force use of the
 " neutral gray monotone palette component)
-if (has("gui_running") && g:solarized_degrade == 0)
+if ((has("gui_running") && g:solarized_degrade == 0)|| has('termguicolors'))
     let s:vmode       = "gui"
     let s:base03      = "#002b36"
     let s:base02      = "#073642"
@@ -368,7 +369,7 @@ endif
 "}}}
 " Background value based on termtrans setting "{{{
 " ---------------------------------------------------------------------
-if (has("gui_running") || g:solarized_termtrans == 0)
+if ((has("gui_running") || g:solarized_termtrans == 0) || has('truecolors'))
     let s:back        = s:base03
 else
     let s:back        = "NONE"

@@ -52,14 +52,13 @@ syntax enable " syntax highlighting on
 set background=dark
 
 " Colorscheme
-if ($COLORTERM == 'gnome-terminal') || (has('gui_running'))
+if ($COLORTERM == 'truecolor') || (has('gui_running'))
         set termguicolors
-        colorscheme tc_solarized
 else
         set term=xterm
         set t_Co=256
-        colorscheme solarized
 endif
+colorscheme solarized
 
 " colorscheme luna
 
