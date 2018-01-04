@@ -52,7 +52,7 @@ syntax enable " syntax highlighting on
 set background=dark
 
 " Colorscheme
-if ($COLORTERM == 'truecolor') || (has('gui_running'))
+if $COLORTERM == 'truecolor'
         set termguicolors
         colorscheme s
 else
