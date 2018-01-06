@@ -6,7 +6,7 @@ This profile can config vim ready in 5s.
 Fast，simple and credible.
 <div  align="center">    
 
-<img src="http://47.92.112.211/wp-content/uploads/2017/10/fscvim-1.png" width = 100% height = 100% alt="Preview" />
+<img src="https://raw.githubusercontent.com/iyuangang/imagepool/master/fscvim-1.png" width = 100% height = 100% alt="Preview" />
 Preview
 </div>
 
@@ -16,7 +16,7 @@ Preview
 
 Automatic by 1 line code.
 ```
-curl http://dwz.cn/fscvim -L > fsc.sh && sh fsc.sh
+curl https://bit.ly/FSCVIM -L > fsc.sh && sh fsc.sh
 ```
 
 You can also manually operate it.
@@ -38,7 +38,7 @@ Wait plugin auto install. Enjoy your fast and beauty new vim.
 
 ### Follow the steps below
 
-1. Download [install.cmd](https://raw.githubusercontent.com/iyuangang/linuxconf/master/install.cmd).
+1. Download [install.cmd](https://raw.githubusercontent.com/iyuangang/scriptpool/master/install.cmd).
 2. Run the cmd file as Administrator.
 3. Open Gvim. Enjoy it.
 
