@@ -9,8 +9,8 @@ language messages en_US.UTF-8
 set showcmd " Show partial commands in status line and
 set number " Line number on
 " set relativenumber " Line relative number
-    autocmd BufEnter,FocusGained,InsertLeave,WinEnter * if &nu | set rnu   | endif
-    autocmd BufLeave,FocusLost,InsertEnter,WinLeave   * if &nu | set nornu | endif
+autocmd BufEnter,FocusGained,InsertLeave,WinEnter * if &nu | set rnu   | endif
+autocmd BufLeave,FocusLost,InsertEnter,WinLeave   * if &nu | set nornu | endif
 set backspace=indent,eol,start " Backspace for dummies
 set cursorline " Highlight current line
 set mouse=a " Automatically detect file types
@@ -37,13 +37,15 @@ let g:mapleader = " "
 nnoremap <leader>w :%s/\s\+$//<cr>:let @/=''<CR>
 
 " GVIM font----------------------------
-set guifont=DejaVu\ Sans\ Mono\ for\ Powerline:h12
-set guioptions-=T " hide tool bar
-set guioptions-=m " hide menu bar
-set guioptions-=r " hide right scroll bar
-set guioptions-=l " hide left scroll bar
-set guioptions-=R " hide right scroll bar when window is split vertically
-set guioptions-=L " hide left scroll bar when window is split vertically
+if has("gui_running")
+        set guifont=DejaVu\ Sans\ Mono\ for\ Powerline:h12
+        set guioptions-=T " hide tool bar
+        set guioptions-=m " hide menu bar
+        set guioptions-=r " hide right scroll bar
+        set guioptions-=l " hide left scroll bar
+        set guioptions-=R " hide right scroll bar when window is split vertically
+        set guioptions-=L " hide left scroll bar when window is split vertically
+endif
 
 syntax enable " syntax highlighting on
 
@@ -60,7 +62,6 @@ else
         set t_Co=256
         colorscheme solarized
 endif
-
 
 " colorscheme luna
 
