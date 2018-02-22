@@ -63,12 +63,6 @@ else
         colorscheme solarized
 endif
 
-" colorscheme luna
-
-highlight clear SignColumn " SignColumn should match background
-" highlight clear LineNr " Current line number row will have same background color in relative mode
-" highlight clear CursorLineNr " Remove highlight color from current line number
-
 " PLUGIN CONFIG =============================
 " !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 if empty(glob('~/.vim/plugged'))
@@ -86,7 +80,6 @@ call plug#begin('~/.vim/plugged')
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 let g:airline_theme='solarized'
-" let g:airline_theme='luna'
 let g:airline_powerline_fonts=1
 let g:airline#extensions#tabline#enabled=1
 
