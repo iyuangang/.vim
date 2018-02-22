@@ -94,12 +94,12 @@ let g:signify_vcs_list = [ 'git', 'hg' ]
 nmap <leader>sn <plug>(signify-next-hunk)
 nmap <leader>sp <plug>(signify-prev-hunk)
 " nicer colors
-highlight DiffAdd cterm=bold ctermbg=none ctermfg=119
-highlight DiffDelete cterm=bold ctermbg=none ctermfg=167
-highlight DiffChange cterm=bold ctermbg=none ctermfg=227
-highlight SignifySignAdd cterm=bold ctermbg=none ctermfg=119
-highlight SignifySignDelete cterm=bold ctermbg=none ctermfg=167
-highlight SignifySignChange cterm=bold ctermbg=none ctermfg=227
+" highlight DiffAdd cterm=bold ctermbg=none ctermfg=119
+" highlight DiffDelete cterm=bold ctermbg=none ctermfg=167
+" highlight DiffChange cterm=bold ctermbg=none ctermfg=227
+" highlight SignifySignAdd cterm=bold ctermbg=none ctermfg=119
+" highlight SignifySignDelete cterm=bold ctermbg=none ctermfg=167
+" highlight SignifySignChange cterm=bold ctermbg=none ctermfg=227
 
 Plug 'easymotion/vim-easymotion'
 
