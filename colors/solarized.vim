@@ -4,7 +4,7 @@
 "           (see this url for latest release & screenshots)
 " License:  OSI approved MIT license (see end of this file)
 " Created:  In the middle of the night
-" Modified: 2011 May 05
+" Modified: 2018 Feb 22 by Tim Yuan
 "
 " Usage "{{{
 "
