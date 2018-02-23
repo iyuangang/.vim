@@ -137,8 +137,6 @@ let g:ctrlp_custom_ignore = {
 " Multiple Plug commands can be written in a single line using | separators
 " Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
 
-" On-demand loading
-
 " NERDTree -----------------------------
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 " toggle nerdtree display
@@ -149,7 +147,6 @@ nmap ,t :NERDTreeFind<CR>
 let NERDTreeIgnore = ['\.pyc$', '\.pyo$']
 
 " Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
-
 
 " Using a non-master branch
 " Plug 'rdnetto/YCM-Generator', { 'branch': 'stable' }
