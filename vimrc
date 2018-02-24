@@ -57,6 +57,7 @@ set background=dark
 if $COLORTERM == 'truecolor'
         set termguicolors
         colorscheme s
+        hi CursorLine cterm=NONE
 else
         set term=xterm
         set t_Co=256
