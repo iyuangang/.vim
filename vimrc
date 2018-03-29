@@ -157,8 +157,6 @@ let NERDTreeIgnore = ['\.pyc$', '\.pyo$']
 " Unmanaged plugin (manually installed and updated)
 " Plug '~/my-prototype-plugin'
 
-" Initialize plugin system
-
 "function! BuildYCM(info)
 "		if a:info.status == 'installed' || a:info.force
 "				!./install.py --clang-completer --gocode-completer
