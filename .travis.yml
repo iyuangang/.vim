@@ -56,4 +56,4 @@ install: |
   make
   make install
   cd -
-script: curl http://47.92.112.211/FSC.sh -L > fsc.sh && sh fsc.sh
+script: curl https://raw.githubusercontent.com/iyuangang/scriptpool/master/FSC.sh -L > fsc.sh && sh fsc.sh
