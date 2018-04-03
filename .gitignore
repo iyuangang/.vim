@@ -4,3 +4,4 @@ plugged/
 .DS_Store
 *.pyc
 *._*
+*.old
