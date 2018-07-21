@@ -197,6 +197,9 @@ let g:jedi#rename_command = "<leader>r"
 " Track the engine.
 Plug 'SirVer/ultisnips'
 
+" IndentLine
+Plug 'Yggdroot/indentLine'
+
 " Snippets are separated from the engine. Add this if you want them:
 Plug 'honza/vim-snippets'
 
