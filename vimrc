@@ -38,13 +38,31 @@ nnoremap <leader>w :%s/\s\+$//<cr>:let @/=''<CR>
 
 " GVIM font----------------------------
 if has("gui_running")
-        set guifont=DejaVu\ Sans\ Mono\ for\ Powerline:h12
         set guioptions-=T " hide tool bar
         set guioptions-=m " hide menu bar
         set guioptions-=r " hide right scroll bar
         set guioptions-=l " hide left scroll bar
         set guioptions-=R " hide right scroll bar when window is split vertically
         set guioptions-=L " hide left scroll bar when window is split vertically
+
+        silent function! OSX()
+            return has('macunix')
+        endfunction
+        silent function! LINUX()
+            return has('unix') && !has('macunix') && !has('win32unix')
+        endfunction
+        silent function! WINDOWS()
+            return  (has('win32') || has('win64'))
+        endfunction
+
+        " if LINUX()&& has(gui_running)
+        if LINUX()
+                set guifont=Meslo\ LG\ S\ DZ\ for\ Powerline\ Regular\ 12
+        elseif OSX()
+                set guifont=Meslo\ LG\ S\ DZ\ for\ Powerline\ Regular:h12
+        elseif WINDOWS()
+                set guifont=Meslo\ LG\ S\ DZ\ for\ Powerline\ Regular:h12
+        endif
 endif
 
 syntax enable " syntax highlighting on
