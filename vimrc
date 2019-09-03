@@ -59,7 +59,8 @@ if has("gui_running")
         if LINUX()
                 set guifont=Meslo\ LG\ S\ DZ\ for\ Powerline\ Regular\ 12
         elseif OSX()
-                set guifont=Meslo\ LG\ S\ DZ\ for\ Powerline\ Regular:h12
+                set guifont=MesloLGS\ NF:h13
+                " set guifont=Meslo\ LG\ S\ DZ\ Regular\ for\ Powerline:h13
         elseif WINDOWS()
                 set guifont=Meslo\ LG\ S\ DZ\ for\ Powerline\ Regular:h12
         endif
