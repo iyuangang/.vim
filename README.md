@@ -10,6 +10,18 @@ Fast，simple and credible.
 Preview
 </div>
 
+The full choice of style options is available only when using
+[Nerd Fonts](https://github.com/ryanoasis/nerd-fonts).
+
+### Recommended: Meslo Nerd Font patched for FSCVim
+
+Download these four ttf files:
+- [MesloLGS NF Regular.ttf](https://github.com/romkatv/dotfiles-public/raw/master/.local/share/fonts/NerdFonts/MesloLGS%20NF%20Regular.ttf)
+- [MesloLGS NF Bold.ttf](https://github.com/romkatv/dotfiles-public/raw/master/.local/share/fonts/NerdFonts/MesloLGS%20NF%20Bold.ttf)
+- [MesloLGS NF Italic.ttf](https://github.com/romkatv/dotfiles-public/raw/master/.local/share/fonts/NerdFonts/MesloLGS%20NF%20Italic.ttf)
+- [MesloLGS NF Bold Italic.ttf](https://github.com/romkatv/dotfiles-public/raw/master/.local/share/fonts/NerdFonts/MesloLGS%20NF%20Bold%20Italic.ttf)
+
+
 ## Linux & MacOS
 
 ### Follow the steps below
