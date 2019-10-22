@@ -36,6 +36,10 @@ let g:mapleader = " "
 "strip all trailing whitespace in the current file
 nnoremap <leader>w :%s/\s\+$//<cr>:let @/=''<CR>
 
+" VIM colorschemes----------------------------
+" set background=light
+set background=dark
+
 " GVIM font----------------------------
 if has("gui_running")
         set guioptions-=T " hide tool bar
@@ -60,6 +64,7 @@ if has("gui_running")
                 set guifont=Meslo\ LG\ S\ DZ\ for\ Powerline\ Regular\ 12
         elseif OSX()
                 set guifont=MesloLGS\ NF:h13
+                set background=light
                 " set guifont=Meslo\ LG\ S\ DZ\ Regular\ for\ Powerline:h13
         elseif WINDOWS()
                 set guifont=Meslo\ LG\ S\ DZ\ for\ Powerline\ Regular:h12
@@ -67,10 +72,6 @@ if has("gui_running")
 endif
 
 syntax enable " syntax highlighting on
-
-" VIM colorschemes----------------------------
-" set background=light
-set background=dark
 
 " Colorscheme
 if $COLORTERM == 'truecolor'
