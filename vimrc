@@ -1,6 +1,6 @@
 " FSCVIM basic set -------------------
 set nocompatible " incompatible vi
-" set fileencodings=ucs-bom,utf-8,cp936,gb18030,big5,euc-jp,euc-kr,latin1
+set fileencodings=ucs-bom,utf-8,cp936,gb18030,big5,euc-jp,euc-kr,latin1
 set encoding=utf-8
 " set termencoding=cp936
 language messages en_US.UTF-8
@@ -62,12 +62,14 @@ if has("gui_running")
         " if LINUX()&& has(gui_running)
         if LINUX()
                 set guifont=Meslo\ LG\ S\ DZ\ for\ Powerline\ Regular\ 12
+                set background=light
         elseif OSX()
                 set guifont=MesloLGS\ NF:h13
                 set background=light
                 " set guifont=Meslo\ LG\ S\ DZ\ Regular\ for\ Powerline:h13
         elseif WINDOWS()
                 set guifont=Meslo\ LG\ S\ DZ\ for\ Powerline\ Regular:h12
+                set background=light
         endif
 endif
 
