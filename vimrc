@@ -232,4 +232,7 @@ let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 
+Plug 'iamcco/markdown-preview.nvim',{'do':{ -> mkdp#util#install() }}
+let g:mkdp_auto_start = 1
+
 call plug#end()
