@@ -43,9 +43,11 @@ jobs:
       - name: Prepare artifact
         run: |
           find ~/.vim/plugged/ -type d -name ".git" | xargs rm -rf {}
+          cd ~/.vim 
+          tar zcvf plugged.tar.gz plugged/
 
       - name: Upload artifact firmware
         uses: actions/upload-artifact@master
         with:
           name: OpenWrt firmware
-          path: ~/.vim/plugged/
+          path: ~/.vim/plugged.tar.gz
