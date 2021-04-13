@@ -1,0 +1,72 @@
+#
+# This is free software, lisence use MIT.
+# 
+# Copyright (C) 2019 P3TERX <https://p3terx.com>
+# Copyright (C) 2019 KFERMercer <KFER.Mercer@gmail.com>
+# 
+# <https://github.com/KFERMercer/OpenWrt-CI>
+# 
+
+name: VIM Plugged Tar
+
+on:
+  # schedule:
+  #   - cron: 30 1 * * 3,6
+  push:
+    branches: 
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-18.04
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@master
+        with:
+          ref: master
+
+      - name: Initialization environment
+        env:
+          DEBIAN_FRONTEND: noninteractive
+        run: |
+          docker rmi `docker images -q`
+          echo "Deleting files, please wait ..."
+          sudo rm -rf \
+            /usr/share/dotnet \
+            /etc/mysql \
+            /etc/php
+          sudo -E apt-get -y purge \
+            azure-cli \
+            ghc* \
+            zulu* \
+            hhvm \
+            llvm* \
+            firefox \
+            google* \
+            dotnet* \
+            powershell \
+            openjdk* \
+            mysql* \
+            php*
+          sudo -E apt-get update
+          sudo -E apt-get -y install vim
+          sudo -E apt-get -y autoremove --purge
+          sudo -E apt-get clean
+          cp ~/.vimrc ~/.vimrcbak ; cp -r ~/.vim ~/.vimbak ; rm -rf ~/.vimrc ~/.vim
+
+      - name: Update packages
+        run: |
+          cd 
+          git clone https://github.com/iyuangang/.vim.git ~/.vim
+          vim -c ':PlugUpdate' -c 'wqa'
+
+      - name: Prepare artifact
+        run: |
+          find ~/.vim/plugged/ -type d -name ".git" | xargs rm -rf {}
+
+      - name: Upload artifact firmware
+        uses: actions/upload-artifact@master
+        with:
+          name: OpenWrt firmware
+          path: ~/.vim/plugged/
